@@ -1,0 +1,8 @@
+# Local lefthook overrides
+.lefthook-local.yml
+
+# IDE files
+.idea/
+
+# macOS
+.DS_Store
