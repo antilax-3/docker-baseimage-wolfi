@@ -1,3 +1,13 @@
+<p align="center">
+  <a href="https://github.com/AntilaX-3/"><img src="https://avatars.githubusercontent.com/u/35715409" width="150" title="AntilaX-3"></a>
+</p>
+
+<p align="center">
+  <a href="https://buildkite.com/antilax-3/wolfi"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fbuildkite%2F90b075de0ea7d9466d2deabf13a8d50f161a42d6f7d383f672%2Fmaster.json&query=%24.message&label=build&logo=buildkite&logoColor=%2314cc80&mode=dark&size=sm&variant=outline"><img alt="Build" src="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fbuildkite%2F90b075de0ea7d9466d2deabf13a8d50f161a42d6f7d383f672%2Fmaster.json&query=%24.message&label=build&logo=buildkite&logoColor=%2314cc80&mode=light&size=sm&variant=outline"></picture></a>
+  <a href="https://hub.docker.com/r/antilax3/wolfi/tags"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fdocker%2Fimage-size%2Fantilax3%2Fwolfi%2Flatest.json&query=%24.message&label=image%20size&logo=docker&logoColor=%232496ed&mode=dark&size=sm&variant=outline"><img alt="Docker Size" src="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fdocker%2Fimage-size%2Fantilax3%2Fwolfi%2Flatest.json&query=%24.message&label=image%20size&logo=docker&logoColor=%232496ed&mode=light&size=sm&variant=outline"></picture></a>
+  <a href="https://hub.docker.com/r/antilax3/wolfi"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fdocker%2Fpulls%2Fantilax3%2Fwolfi.json&query=%24.message&label=pulls&logo=docker&logoColor=%232496ed&mode=dark&size=sm&variant=outline"><img alt="Docker Pulls" src="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fdocker%2Fpulls%2Fantilax3%2Fwolfi.json&query=%24.message&label=pulls&logo=docker&logoColor=%232496ed&mode=light&size=sm&variant=outline"></picture></a>
+</p>
+
 [Dockerfile](https://github.com/AntilaX-3/docker-baseimage-wolfi/blob/master/Dockerfile)
 
 ### This base container is not aimed at public consumption. It exists to serve as a single endpoint for AntilaX-3 containers and is based upon [Wolfi](https://github.com/chainguard-dev/wolfi-base) and [S6 overlay](https://github.com/just-containers/s6-overlay), following the layout of our [Alpine baseimage](https://github.com/AntilaX-3/docker-baseimage-alpine).
@@ -9,16 +19,16 @@ directories are identical. What Wolfi changes:
 
 | | Alpine | Wolfi |
 | --- | --- | --- |
-| Platforms | `amd64`, `arm64`, `armv7` | `amd64`, `arm64` — `wolfi-base` publishes no others |
+| Platforms | `amd64`, `arm64`, `armv7` | `amd64`, `arm64`; `wolfi-base` publishes no others |
 | libc | musl | glibc |
 | Tags | `latest`, `3`, `3.24`, `3.24.1`, `BK<build>` | `latest`, `2026`, `2026.09`, `2026.09.16`, `BK<build>` |
 | Base pin | `alpine:<release>@sha256:...` | `cgr.dev/chainguard/wolfi-base:latest@sha256:...` |
-| Build deps | `curl`, `tar`, `xz` | `curl` — busybox provides `tar` and decompresses xz itself |
+| Build deps | `curl`, `tar`, `xz` | `curl`; busybox provides `tar` and decompresses xz itself |
 | `users` group | renumbered to gid 1000 | created at gid 1000; Wolfi ships no `users` group |
 
 ## Versioning
 
-Wolfi is a rolling distribution with no release number of its own — the `VERSION_ID` in its `os-release` is the
+Wolfi is a rolling distribution with no release number of its own: the `VERSION_ID` in its `os-release` is the
 frozen constant `20230201`, and Chainguard publishes no tag but `latest`. The version ladder is therefore the
 **pinned base image's own build date**, read from `org.opencontainers.image.created` on the manifest Renovate pins:
 
