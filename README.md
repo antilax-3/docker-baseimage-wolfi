@@ -8,8 +8,6 @@
   <a href="https://hub.docker.com/r/antilax3/wolfi"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fdocker%2Fpulls%2Fantilax3%2Fwolfi.json&query=%24.message&label=pulls&logo=docker&logoColor=%232496ed&mode=dark&size=sm&variant=outline"><img alt="Docker Pulls" src="https://shieldcn.dev/badge/dynamic/json.svg?url=https%3A%2F%2Fimg.shields.io%2Fdocker%2Fpulls%2Fantilax3%2Fwolfi.json&query=%24.message&label=pulls&logo=docker&logoColor=%232496ed&mode=light&size=sm&variant=outline"></picture></a>
 </p>
 
-[Dockerfile](https://github.com/AntilaX-3/docker-baseimage-wolfi/blob/master/Dockerfile)
-
 ### This base container is not aimed at public consumption. It exists to serve as a single endpoint for AntilaX-3 containers and is based upon [Wolfi](https://github.com/chainguard-dev/wolfi-base) and [S6 overlay](https://github.com/just-containers/s6-overlay), following the layout of our [Alpine baseimage](https://github.com/AntilaX-3/docker-baseimage-alpine).
 
 ## Differences from the Alpine baseimage
